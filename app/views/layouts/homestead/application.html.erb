@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homestead</title>
+  <%= stylesheet_link_tag    "homestead/application", media: "all" %>
+  <%= stylesheet_link_tag    "homestead/application", media: "all" %>
+  <%= javascript_include_tag "homestead/application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Homestead Demo</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/About">About</a>
+        </li>
+      </ul>
+    </div>
+
+    <%= render 'homestead/shared/search_bar' %>
+  </nav>
+
+
+  <div class="container">
+    <main>
+      <%= yield %>
+    </main>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+module Homestead
+  class PropertyType < ActiveRecord::Base
+    validates_presence_of :code
+    validates_presence_of :name
+  end
+end

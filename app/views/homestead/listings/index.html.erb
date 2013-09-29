@@ -1,0 +1,14 @@
+<h1>Real Estate</h1>
+
+<div class="listings">
+<% @listings.each do |listing| %>
+  <div class="listing">
+    <h2>
+      <span class="price"><%= number_to_currency(listing.list_price, :precision => 0) %></span>
+    </h2>
+    <%= image_tag listing.photo.url(:medium) %>
+    <h3><%= listing.address %></h3>
+    <p><%= listing.remarks %></p>
+  </div>
+<% end %>
+</div>

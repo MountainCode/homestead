@@ -1,0 +1,29 @@
+<%
+    # TODO Refactor this into a view
+    def property_type_options
+      a = Homestead::PropertyType.all.map do |t|
+        [t.name, t.id]
+      end
+      [['Property type', '']].concat(a)
+    end
+%>
+
+<div class="search-bar">
+<div class="container">
+  <%= search_form_for @q, class: 'search-form' do |f| %>
+    <ul>
+      <li>
+        <%= f.select :property_type_id_eq, property_type_options %>
+      </li>
+      <li>
+        <%= f.label :list_price_gteq, '$' %>
+        <%= f.number_field :list_price_gteq, placeholder: 'min', step: 10_000 %>
+        to
+        <%= f.label :list_price_lteq, '$' %>
+        <%= f.number_field :list_price_lteq, placeholder: 'max', step: 10_000 %>
+      </li>
+    </ul>
+    <%= f.submit 'Find properties' %>
+  <% end %>
+</div>
+</div>
