@@ -6,6 +6,8 @@ class CreateHomesteadAgents < ActiveRecord::Migration
       t.integer :status_id
       t.integer :office_id
 
+      t.attachment :photo
+
       t.timestamps
     end
   end

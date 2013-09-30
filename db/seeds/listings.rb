@@ -21,7 +21,7 @@ module Homestead
       property_type: residential,
       listing_number: listing_number,
       list_price: 669_500,
-      list_date: Date.new,
+      list_date: Date.parse('2013-09-30'),
       status: active,
       address: Address.new(
         line1: '257 East Main Street',
@@ -39,7 +39,7 @@ module Homestead
       property_type: residential,
       listing_number: listing_number,
       list_price: 599_000,
-      list_date: Date.new,
+      list_date: Date.parse('2013-08-15'),
       status: active,
       address: Address.new(
         line1: '400 Market St.',
@@ -57,7 +57,7 @@ module Homestead
       property_type: land,
       listing_number: listing_number,
       list_price: 200_000,
-      list_date: Date.new,
+      list_date: Date.parse('2013-07-01'),
       status: active,
       address: Address.new(
         line1: '123 Nice plot',

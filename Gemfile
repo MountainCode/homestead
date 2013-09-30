@@ -20,5 +20,6 @@ gem 'rails_admin'
 
 # Need to keep paperclip here until rails 4 is added to the main branch
 # gem 'paperclip', git: 'git@github.com:thoughtbot/paperclip.git', branch: 'rails-4'
+gem 'therubyracer'
 gem 'paperclip'
-gem 'ransack', git: 'git@github.com:ernie/ransack.git', branch: 'rails-4'
+gem 'ransack', git: 'https://github.com/ernie/ransack.git', branch: 'rails-4'
