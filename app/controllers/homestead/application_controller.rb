@@ -1,7 +1,12 @@
 module Homestead
   class ApplicationController < ActionController::Base
-    def office
-      Office.where(name: 'Mary Mitchell Miller Real Estate').first
+    helper_method :property_type_options
+
+    def property_type_options
+      a = Homestead::PropertyType.all.map do |t|
+        [t.name, t.id]
+      end
+      [['Property type', '']].concat(a)
     end
   end
 end
