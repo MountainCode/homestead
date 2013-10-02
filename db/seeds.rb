@@ -17,4 +17,10 @@ module Homestead
   ::Country['US'].states.each do |code, state|
     State.new(code: code, name: state['name']).save!
   end
+
+  {
+    'S' => 'Single family home',
+    'L' => 'Lot',
+    'B' => 'Business'
+  }.each {|k, v| SubPropertyType.new(code:k, name: v).save!}
 end

@@ -14,11 +14,14 @@ module Homestead
   active = ListingStatus.where(code: 'A').first
 
   residential = PropertyType.where(code: 'R').first
+  single_home = SubPropertyType.where(code: 'S').first
   land = PropertyType.where(code: 'L').first
+  lot = SubPropertyType.where(code: 'L').first
 
   with_files('4305494') do |listing_number, img, remarks|
     Listing.new(
       property_type: residential,
+      sub_property_type: single_home,
       listing_number: listing_number,
       list_price: 669_500,
       list_date: Date.parse('2013-09-30'),
@@ -37,6 +40,7 @@ module Homestead
   with_files('THOMPSON') do |listing_number, img, remarks|
     Listing.new(
       property_type: residential,
+      sub_property_type: single_home,
       listing_number: listing_number,
       list_price: 599_000,
       list_date: Date.parse('2013-08-15'),
@@ -55,6 +59,7 @@ module Homestead
   with_files('000LAND') do |listing_number, img, remarks|
     Listing.new(
       property_type: land,
+      sub_property_type: lot,
       listing_number: listing_number,
       list_price: 200_000,
       list_date: Date.parse('2013-07-01'),
