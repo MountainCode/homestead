@@ -8,7 +8,7 @@ module Homestead
     belongs_to :status, class_name: Homestead::ListingStatus
     has_and_belongs_to_many :agents
     has_attached_file :photo, styles: {medium: '300x300>'}, default_url: '/assets/homestead/image_not_found.png'
-    belongs_to :property_type
+    has_one :property_type, through: :sub_property_type
     belongs_to :sub_property_type
     belongs_to :provider, class_name: Homestead::ListingProvider
 

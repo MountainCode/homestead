@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 20131003143618) do
     t.decimal  "longitude"
     t.integer  "office_id"
     t.integer  "provider_id"
-    t.integer  "property_type_id"
     t.integer  "sub_property_type_id"
     t.integer  "status_id"
     t.integer  "address_id"
@@ -121,6 +120,7 @@ ActiveRecord::Schema.define(version: 20131003143618) do
   create_table "homestead_sub_property_types", force: true do |t|
     t.string   "code"
     t.string   "name"
+    t.integer  "property_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
