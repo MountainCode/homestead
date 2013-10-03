@@ -12,6 +12,14 @@ module Homestead
     belongs_to :sub_property_type
     belongs_to :provider, class_name: Homestead::ListingProvider
 
+    after_initialize do
+      if new_record?
+        self.provider = ListingProvider.where(name: 'Custom').first
+        self.status = ListingStatus.where(code: 'A').first
+        self.list_date = DateTime.now
+      end
+    end
+
     def name
       "#{listing_number} - #{address.city}, #{address.state}" if address
     end

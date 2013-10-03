@@ -15,13 +15,10 @@ module Homestead
     factory :listing, class: Homestead::Listing do
       listing_number '000001'
       list_price 100_000
-      list_date Date.parse('2013-09-30')
       property_type residential
       sub_property_type single_home
-      provider custom
       address Address.new(line1: '123 Ventura St.', city: 'Jamaica',
         state: vt, postal_code: '05343')
-      status ListingStatus.where(code: 'A').first
     end
     factory :jackson_listing, class: Homestead::Listing do
       listing_number '000002'
@@ -29,10 +26,8 @@ module Homestead
       list_date Date.parse('2013-08-15')
       property_type commercial
       sub_property_type business
-      provider custom
       address Address.new(line1: '1 Snowy Way', city: 'Jackson',
         state: wy, postal_code: 'XXXXX')
-      status ListingStatus.where(code: 'A').first
     end
     factory :jackson_listing2, class: Homestead::Listing do
       listing_number '000003'
@@ -40,7 +35,6 @@ module Homestead
       list_date Date.parse('2013-07-01')
       property_type land
       sub_property_type lot
-      provider custom
       address Address.new(line1: '1 Mountain Pass', city: 'Jackson',
         state: wy, postal_code: 'XXXXX')
       status ListingStatus.where(code: 'C').first

@@ -26,9 +26,6 @@ module Homestead
       sub_property_type: single_home,
       listing_number: listing_number,
       list_price: 669_500,
-      list_date: Date.parse('2013-09-30'),
-      status: active,
-      provider: custom,
       address: Address.new(
         line1: '257 East Main Street',
         city: 'Coquille',
@@ -47,8 +44,6 @@ module Homestead
       listing_number: listing_number,
       list_price: 599_000,
       list_date: Date.parse('2013-08-15'),
-      status: active,
-      provider: custom,
       address: Address.new(
         line1: '400 Market St.',
         city: 'New Wilmington',
@@ -67,8 +62,6 @@ module Homestead
       listing_number: listing_number,
       list_price: 200_000,
       list_date: Date.parse('2013-07-01'),
-      status: active,
-      provider: custom,
       address: Address.new(
         line1: '123 Nice plot',
         city: 'Londonderry',
