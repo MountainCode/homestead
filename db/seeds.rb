@@ -23,4 +23,6 @@ module Homestead
     'L' => 'Lot',
     'B' => 'Business'
   }.each {|k, v| SubPropertyType.new(code:k, name: v).save!}
+
+  ListingProvider.new(name: 'Custom').save!
 end

@@ -18,6 +18,8 @@ module Homestead
   land = PropertyType.where(code: 'L').first
   lot = SubPropertyType.where(code: 'L').first
 
+  custom = ListingProvider.where(name: 'Custom').first
+
   with_files('4305494') do |listing_number, img, remarks|
     Listing.new(
       property_type: residential,
@@ -26,6 +28,7 @@ module Homestead
       list_price: 669_500,
       list_date: Date.parse('2013-09-30'),
       status: active,
+      provider: custom,
       address: Address.new(
         line1: '257 East Main Street',
         city: 'Coquille',
@@ -45,6 +48,7 @@ module Homestead
       list_price: 599_000,
       list_date: Date.parse('2013-08-15'),
       status: active,
+      provider: custom,
       address: Address.new(
         line1: '400 Market St.',
         city: 'New Wilmington',
@@ -64,6 +68,7 @@ module Homestead
       list_price: 200_000,
       list_date: Date.parse('2013-07-01'),
       status: active,
+      provider: custom,
       address: Address.new(
         line1: '123 Nice plot',
         city: 'Londonderry',
