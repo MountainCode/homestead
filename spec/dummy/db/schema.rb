@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131003131524) do
+ActiveRecord::Schema.define(version: 20131003143618) do
 
   create_table "homestead_addresses", force: true do |t|
     t.string   "line1"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20131003131524) do
     t.string   "city"
     t.integer  "state_id"
     t.string   "postal_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "homestead_agent_statuses", force: true do |t|
+    t.string   "code"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -77,6 +84,13 @@ ActiveRecord::Schema.define(version: 20131003131524) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "homestead_office_statuses", force: true do |t|
+    t.string   "code"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
