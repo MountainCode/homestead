@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131003143618) do
+ActiveRecord::Schema.define(version: 20131004150725) do
 
   create_table "homestead_addresses", force: true do |t|
     t.string   "line1"
@@ -54,6 +54,12 @@ ActiveRecord::Schema.define(version: 20131003143618) do
     t.datetime "updated_at"
   end
 
+  create_table "homestead_land_properties", force: true do |t|
+    t.decimal  "lot_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "homestead_listing_providers", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -69,20 +75,22 @@ ActiveRecord::Schema.define(version: 20131003143618) do
 
   create_table "homestead_listings", force: true do |t|
     t.string   "listing_number"
+    t.integer  "status_id"
+    t.integer  "property_type_id"
+    t.integer  "sub_property_type_id"
     t.decimal  "list_price"
     t.date     "list_date"
-    t.decimal  "latitude"
-    t.decimal  "longitude"
-    t.integer  "office_id"
-    t.integer  "provider_id"
-    t.integer  "sub_property_type_id"
-    t.integer  "status_id"
     t.integer  "address_id"
     t.text     "remarks"
+    t.integer  "office_id"
+    t.integer  "provider_id"
+    t.integer  "property_id"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -106,6 +114,13 @@ ActiveRecord::Schema.define(version: 20131003143618) do
   create_table "homestead_property_types", force: true do |t|
     t.string   "code"
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "homestead_residential_properties", force: true do |t|
+    t.integer  "beds"
+    t.decimal  "baths"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

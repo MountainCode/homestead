@@ -12,6 +12,8 @@ module Homestead
     belongs_to :sub_property_type
     belongs_to :provider, class_name: Homestead::ListingProvider
 
+    accepts_nested_attributes_for :address
+
     after_initialize do
       if new_record?
         self.provider = ListingProvider.where(name: 'Custom').first

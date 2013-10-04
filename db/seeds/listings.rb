@@ -21,7 +21,7 @@ module Homestead
   custom = ListingProvider.where(name: 'Custom').first
 
   with_files('4305494') do |listing_number, img, remarks|
-    Listing.new(
+    ResidentialListing.new(
       property_type: residential,
       sub_property_type: single_home,
       listing_number: listing_number,
@@ -33,12 +33,13 @@ module Homestead
         postal_code: '97423'
       ),
       photo: img,
-      remarks: remarks
+      remarks: remarks,
+      property: ResidentialProperty.new(beds: 3, baths: 1.5)
     ).save!
   end
 
   with_files('THOMPSON') do |listing_number, img, remarks|
-    Listing.new(
+    ResidentialListing.new(
       property_type: residential,
       sub_property_type: single_home,
       listing_number: listing_number,
@@ -51,12 +52,13 @@ module Homestead
         postal_code: '16142'
       ),
       photo: img,
-      remarks: remarks
+      remarks: remarks,
+      property: ResidentialProperty.new(beds: 2, baths: 1)
     ).save!
   end
 
   with_files('000LAND') do |listing_number, img, remarks|
-    Listing.new(
+    LandListing.new(
       property_type: land,
       sub_property_type: lot,
       listing_number: listing_number,
@@ -69,7 +71,8 @@ module Homestead
         postal_code: '05148'
       ),
       photo: img,
-      remarks: remarks
+      remarks: remarks,
+      property: LandProperty.new(lot_size: 10.5)
     ).save!
   end
 end
