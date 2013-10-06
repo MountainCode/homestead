@@ -3,7 +3,7 @@ module Homestead
     def index
       # @listings = office.listings
       @q = Listing.search(params[:q])
-      @listings = @q.result
+      @listings = ListingDecorator.decorate_collection @q.result
     end
     def search
       @q = Listing.search(params[:q])

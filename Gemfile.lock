@@ -208,6 +208,7 @@ DEPENDENCIES
   capybara
   countries
   devise
+  draper
   factory_girl_rails (~> 4.0.0)
   homestead!
   paperclip

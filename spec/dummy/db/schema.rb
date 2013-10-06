@@ -74,9 +74,9 @@ ActiveRecord::Schema.define(version: 20131004150725) do
   end
 
   create_table "homestead_listings", force: true do |t|
+    t.string   "type"
     t.string   "listing_number"
     t.integer  "status_id"
-    t.integer  "property_type_id"
     t.integer  "sub_property_type_id"
     t.decimal  "list_price"
     t.date     "list_date"

@@ -1,9 +1,9 @@
 class CreateHomesteadListings < ActiveRecord::Migration
   def change
     create_table :homestead_listings do |t|
+      t.string  :type
       t.string  :listing_number
       t.integer :status_id
-      t.integer :property_type_id
       t.integer :sub_property_type_id
       t.decimal :list_price
       t.date    :list_date

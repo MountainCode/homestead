@@ -18,6 +18,9 @@ $ cd spec/dummy
 $ rails s
 ```
 
+To learn more about design patterns used in this project see the
+[architecture](doc/architecture.md) page.
+
 ## Running Tests
 
 ```bash
