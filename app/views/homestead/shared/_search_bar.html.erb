@@ -14,6 +14,11 @@
       </li>
     </ul>
     <%= f.submit 'Find properties' %>
+    <ul>
+      <li>
+        <%= sort_link @q, :list_price, 'Price' %>
+      </li>
+    </ul>
   <% end %>
 </div>
 </div>
