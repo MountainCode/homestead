@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131007131457) do
+ActiveRecord::Schema.define(version: 20131007190955) do
 
   create_table "homestead_addresses", force: true do |t|
     t.string   "line1"
@@ -65,6 +65,18 @@ ActiveRecord::Schema.define(version: 20131007131457) do
     t.datetime "updated_at"
   end
 
+  create_table "homestead_listing_photos", force: true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "name"
+    t.string   "comment"
+    t.integer  "listing_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "homestead_listing_providers", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -90,10 +102,7 @@ ActiveRecord::Schema.define(version: 20131007131457) do
     t.integer  "office_id"
     t.integer  "provider_id"
     t.integer  "property_id"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
+    t.integer  "primary_photo_id"
     t.decimal  "latitude"
     t.decimal  "longitude"
     t.datetime "created_at"

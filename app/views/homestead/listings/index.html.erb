@@ -2,22 +2,18 @@
 
 <div class="listings">
 <% @listings.each do |listing| %>
-  <% property = listing.property %>
   <div class="listing">
     <h2>
       <span class="price"><%= number_to_currency(listing.list_price, :precision => 0) %></span>
     </h2>
-    <%= image_tag listing.photo.url(:medium) %>
+    <% if listing.has_primary_photo %>
+    <a href="<%= listing_path(listing) %>">
+      <%= image_tag listing.primary_photo.image.url(:medium) %>
+    </a>
+    <% end %>
     <h3><%= listing.address %></h3>
-    <% if property.has_baths %>
-    <strong>Baths: </strong><span><%= property.baths %></span>
-    <% end %>
-    <% if property.has_beds %>
-    <strong>Beds: </strong><span><%= property.beds %></span>
-    <% end %>
-    <% if property.has_lot_size %>
-      <strong>Lot Size: </strong><span><%= property.lot_size %> acres</span>
-    <% end %>
+
+    <%= render(partial: 'details', locals: {property: listing.property}) %>
     <p><%= listing.remarks %></p>
   </div>
 <% end %>

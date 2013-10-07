@@ -1,0 +1,6 @@
+<% @listing.photos.each do |photo| %>
+  <%= image_tag photo.image.url(:medium), 'class' => 'listing-photo' %>
+<% end %>
+
+<%= render partial: 'details', locals: {property: @listing.property} %>
+<p><%= @listing.remarks %></p>

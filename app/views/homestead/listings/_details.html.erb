@@ -1,0 +1,11 @@
+<div class="listing-details">
+  <% if property.has_baths %>
+  <strong>Baths: </strong><span><%= property.baths %></span>
+  <% end %>
+  <% if property.has_beds %>
+  <strong>Beds: </strong><span><%= property.beds %></span>
+  <% end %>
+  <% if property.has_lot_size %>
+    <strong>Lot Size: </strong><span><%= property.lot_size %> acres</span>
+  <% end %>
+</div>

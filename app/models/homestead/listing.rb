@@ -5,12 +5,13 @@ module Homestead
                           :provider
 
     belongs_to :address
-    belongs_to :status, class_name: Homestead::ListingStatus
+    belongs_to :status, class_name: ListingStatus
     has_and_belongs_to_many :agents
-    has_attached_file :photo, styles: {medium: '300x300>'}, default_url: '/assets/homestead/image_not_found.png'
     has_one :property_type, through: :sub_property_type
     belongs_to :sub_property_type
-    belongs_to :provider, class_name: Homestead::ListingProvider
+    belongs_to :provider, class_name: ListingProvider
+    has_many :photos, class_name: ListingPhoto
+    has_one :primary_photo, class_name: ListingPhoto
 
     accepts_nested_attributes_for :address
 

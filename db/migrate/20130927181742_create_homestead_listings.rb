@@ -13,8 +13,8 @@ class CreateHomesteadListings < ActiveRecord::Migration
       t.integer :office_id
       t.integer :provider_id
       t.integer :property_id
-      
-      t.attachment :photo
+
+      t.integer :primary_photo_id
 
       t.decimal :latitude
       t.decimal :longitude

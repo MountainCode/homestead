@@ -22,6 +22,7 @@ module Homestead
   custom = ListingProvider.where(name: 'Custom').first
 
   with_files('4305494') do |listing_number, img, remarks|
+    photo = ListingPhoto.new(image: img)
     ResidentialListing.new(
       property_type: residential,
       sub_property_type: single_home,
@@ -33,13 +34,15 @@ module Homestead
         state: oregon,
         postal_code: '97423'
       ),
-      photo: img,
+      photos: [photo],
+      primary_photo: photo,
       remarks: remarks,
       property: ResidentialProperty.new(beds: 3, baths: 1.5)
     ).save!
   end
 
   with_files('THOMPSON') do |listing_number, img, remarks|
+    photo = ListingPhoto.new(image: img)
     ResidentialListing.new(
       property_type: residential,
       sub_property_type: single_home,
@@ -52,32 +55,39 @@ module Homestead
         state: pa,
         postal_code: '16142'
       ),
-      photo: img,
+      photos: [photo],
+      primary_photo: photo,
       remarks: remarks,
       property: ResidentialProperty.new(beds: 2, baths: 1)
     ).save!
   end
 
   with_files('000LAND') do |listing_number, img, remarks|
-    LandListing.new(
-      property_type: land,
-      sub_property_type: lot,
-      listing_number: listing_number,
-      list_price: 200_000,
-      list_date: Date.parse('2013-07-01'),
-      address: Address.new(
-        line1: '123 Nice plot',
-        city: 'Londonderry',
-        state: vt,
-        postal_code: '05148'
-      ),
-      photo: img,
-      remarks: remarks,
-      property: LandProperty.new(lot_size: 10.5)
-    ).save!
+    File.open("db/seeds/images/#{listing_number}_2.jpg", 'r') do |img2|
+      photo = ListingPhoto.new(image: img)
+      photo2 = ListingPhoto.new(image: img2)
+      LandListing.new(
+        property_type: land,
+        sub_property_type: lot,
+        listing_number: listing_number,
+        list_price: 200_000,
+        list_date: Date.parse('2013-07-01'),
+        address: Address.new(
+          line1: '123 Nice plot',
+          city: 'Londonderry',
+          state: vt,
+          postal_code: '05148'
+        ),
+        photos: [photo, photo2],
+        primary_photo: photo,
+        remarks: remarks,
+        property: LandProperty.new(lot_size: 10.5)
+      ).save!
+    end
   end
 
   with_files('GERMANTOWN') do |listing_number, img, remarks|
+    photo = ListingPhoto.new(image: img)
     CommercialListing.new(
       sub_property_type: business,
       listing_number: listing_number,
@@ -89,7 +99,8 @@ module Homestead
         state: pa,
         postal_code: '19118'
       ),
-      photo: img,
+      photos: [ListingPhoto.new(image: img)],
+      primary_photo: photo,
       remarks: remarks,
       property: CommercialProperty.new
     ).save!
