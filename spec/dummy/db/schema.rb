@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131004150725) do
+ActiveRecord::Schema.define(version: 20131007131457) do
 
   create_table "homestead_addresses", force: true do |t|
     t.string   "line1"
@@ -46,6 +46,11 @@ ActiveRecord::Schema.define(version: 20131004150725) do
   create_table "homestead_agents_listings", force: true do |t|
     t.integer "agent_id"
     t.integer "listing_id"
+  end
+
+  create_table "homestead_commercial_properties", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "homestead_firms", force: true do |t|

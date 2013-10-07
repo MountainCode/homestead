@@ -17,6 +17,7 @@ module Homestead
   single_home = SubPropertyType.where(code: 'S').first
   land = PropertyType.where(code: 'L').first
   lot = SubPropertyType.where(code: 'L').first
+  business = SubPropertyType.where(code: 'B').first
 
   custom = ListingProvider.where(name: 'Custom').first
 
@@ -73,6 +74,24 @@ module Homestead
       photo: img,
       remarks: remarks,
       property: LandProperty.new(lot_size: 10.5)
+    ).save!
+  end
+
+  with_files('GERMANTOWN') do |listing_number, img, remarks|
+    CommercialListing.new(
+      sub_property_type: business,
+      listing_number: listing_number,
+      list_price: 1_000_000,
+      list_date: Date.parse('2013-01-01'),
+      address: Address.new(
+        line1: '2049 Germantown Ave',
+        city: 'Philadelphia',
+        state: pa,
+        postal_code: '19118'
+      ),
+      photo: img,
+      remarks: remarks,
+      property: CommercialProperty.new
     ).save!
   end
 end
