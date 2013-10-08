@@ -11,3 +11,11 @@ Feature: Property Search
     And she fills in the max list price field with "600000"
     When she clicks the "Find properties" button
     Then she should be shown a property with the address, "400 Market St. New Wilmington, Pennsylvania"
+    And she should not be shown a property with the address, "257 East Main Street"
+
+  Scenario: Filter by property type do
+    Given the buyer selects "Vacant Land" from the property box
+    And he clicks the "Find properties" button
+    Then he should be shown a property with the address, "123 Nice plot"
+    And he should not be shown a property with the address, "400 Market St. New Wilmington, Pennsylvania"
+    And he should not be shown a property with the address, "257 East Main Street"
