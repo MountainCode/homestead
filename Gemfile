@@ -24,3 +24,9 @@ gem 'therubyracer'
 gem 'paperclip'
 gem 'ransack', git: 'https://github.com/ernie/ransack.git', branch: 'rails-4'
 gem 'draper'
+
+group :test do
+  gem 'cucumber', '1.3.2' # 1.3.2 is required as a fix to https://github.com/cucumber/cucumber-rails/issues/252
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+end
