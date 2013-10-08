@@ -32,6 +32,13 @@ require 'cucumber/rails'
 #
 ActionController::Base.allow_rescue = false
 
+Homestead::Engine.load_seed
+
+# TODO Replace this with factories
+require './db/seeds/listings'
+require './db/seeds/agents'
+require './db/seeds/offices'
+
 # Remove/comment out the lines below if your app doesn't have a database.
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
 begin
