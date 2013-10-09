@@ -4,7 +4,7 @@
 <% @listings.each do |listing| %>
   <div class="listing">
     <h2>
-      <span class="price"><%= number_to_currency(listing.list_price, :precision => 0) %></span>
+      <span class="price"><%= listing.list_price %></span>
     </h2>
     <% if listing.has_primary_photo %>
     <a href="<%= listing_path(listing) %>">
