@@ -6,6 +6,7 @@ require 'rspec/autorun'
 require 'factory_girl'
 require 'capybara/rails'
 require 'capybara/rspec'
+require './spec/dummy/db/seeds'
 
 Dir['spec/factories/**/*.rb'].each { |f| require "./#{f}" }
 

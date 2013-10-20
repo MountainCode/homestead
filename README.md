@@ -80,8 +80,16 @@ To learn more about design patterns used in this project see the
 
 ## Running Tests
 
+Run unit tests with
+
 ```bash
-$ rake app:db:migrate RAILS_ENV=test
-$ rake app:db:seed RAILS_ENV=test
-$ rspec
+$ rake app:spec
 ```
+
+Run feature tests with
+
+```bash
+$ rake app:cucumber
+```
+
+Migrations and seeds will be run before tests.
