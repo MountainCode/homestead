@@ -39,7 +39,7 @@ module Homestead
       remarks: remarks,
       property: ResidentialProperty.new(beds: 3, baths: 1.5)
     ).save!
-  end
+  end unless Listing.where(listing_number: '4305494').any?
 
   with_files('THOMPSON') do |listing_number, img, remarks|
     photo = ListingPhoto.new(image: img)
@@ -60,7 +60,7 @@ module Homestead
       remarks: remarks,
       property: ResidentialProperty.new(beds: 2, baths: 1)
     ).save!
-  end
+  end unless Listing.where(listing_number: 'THOMPSON').any?
 
   with_files('000LAND') do |listing_number, img, remarks|
     File.open("db/seeds/images/#{listing_number}_2.jpg", 'r') do |img2|
@@ -84,7 +84,7 @@ module Homestead
         property: LandProperty.new(lot_size: 10.5)
       ).save!
     end
-  end
+  end unless Listing.where(listing_number: '000LAND').any?
 
   with_files('GERMANTOWN') do |listing_number, img, remarks|
     photo = ListingPhoto.new(image: img)
@@ -104,5 +104,5 @@ module Homestead
       remarks: remarks,
       property: CommercialProperty.new
     ).save!
-  end
+  end unless Listing.where(listing_number: 'GERMANTOWN').any?
 end

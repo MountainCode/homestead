@@ -6,11 +6,11 @@ end
 
 module Homestead
   with_files('Chris', 'Kentfield') do |first_name, last_name, img|
-    Agent.new(
+    Agent.create(
       first_name: first_name,
       last_name: last_name,
       photo: img,
       listings: Listing.all
-    ).save!
-  end
+    )
+  end unless Agent.where(first_name: 'Chris', last_name: 'Kentfield').any?
 end
