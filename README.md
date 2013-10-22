@@ -9,60 +9,17 @@ website layout build on [Bootstrap 3](http://getbootstrap.com)
 
 ## Using
 
-```bash
-$ rails new my_website
-```
-
-Edit Gemfile and add
+Add to Gemfile then run ```bundle install```.
 
 ```ruby
-gem 'paperclip'
-gem 'devise'
-gem 'rails_admin'
-gem 'ransack', git: 'https://github.com/ernie/ransack.git', branch: 'rails-4'
-gem 'draper'
 gem 'homestead', git: 'git@github.com:MountainCode/homestead.git'
 ```
 
-Edit config/routes.rb
+You can run ```rails g homestead:install``` which will attempt to automatically
+install Homestead for you.  If you have problems, see the 
+[manual install instructions](doc/MANUAL_INSTALL.md).
 
-```ruby
-mount Homestead::Engine => "/realestate"
-```
-
-Edit db/seeds.rb
-
-```ruby
-User.create(email: 'admin@example.com', password: 'swordfish')
-Homestead::Engine.load_seed
-```
-
-```bash
-$ bundle install
-$ rake homestead:install:migrations
-$ rake db:migrate
-$ rails g rails_admin:install
-$ rake db:migrate
-$ rake db:seed
-$ rails s
-
-Add the following to application_controller.rb
-
-```ruby
-helper_method :property_type_options
-
-def property_type_options
-  a = Homestead::PropertyType.all.map do |t|
-    [t.name, t.id]
-  end
-  [['Property type', '']].concat(a)
-end
-```
-
-Now visit http://localhost:3000/admin
-
-Email: admin@example.com
-Password: swordfish
+For an admin interface, see [Setting Up Rails Admin](doc/RAILS_ADMIN.md).
 
 ## Developing
 
