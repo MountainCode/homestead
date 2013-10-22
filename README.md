@@ -37,16 +37,9 @@ To learn more about design patterns used in this project see the
 
 ## Running Tests
 
-Run unit tests with
-
 ```bash
-$ rake app:spec
-```
-
-Run feature tests with
-
-```bash
-$ rake app:cucumber
+$ rake app:spec # unit tests
+$ rake app:cucumber # feature tests
 ```
 
 Migrations and seeds will be run before tests.
