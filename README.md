@@ -5,7 +5,7 @@ By [Mountain Code](http://www.mtncode.com)
 *This project is in early alpha development*
 
 Homestead is a Rails engine for real estate websites.  It uses a mobile first
-website layout build on [Bootstrap 3](http://getbootstrap.com)
+website layout built on [Bootstrap 3](http://getbootstrap.com)
 
 ## Using
 
