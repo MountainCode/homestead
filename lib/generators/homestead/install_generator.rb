@@ -13,6 +13,7 @@ module Homestead
       gem 'paperclip', '~> 3.5.1'
       gem 'ransack', '~> 1.0.0'
       gem 'draper', '~> 1.2.1'
+      rake 'db:migrate'
 
       rake 'homestead:install:migrations'
       rake 'db:migrate'
