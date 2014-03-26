@@ -10,10 +10,9 @@ module Homestead
       route("mount Homestead::Engine => '/#{mount_point}', :as => 'homestead'\n")
 
       append_file 'Gemfile', "\n", force: true
-      gem 'paperclip', '~> 3.5.1'
-      gem 'ransack', '~> 1.0.0'
-      gem 'draper', '~> 1.2.1'
-      rake 'db:migrate'
+      gem 'paperclip', '~> 4.1.1'
+      gem 'ransack', '~> 1.1.0'
+      gem 'draper', '~> 1.3.0'
 
       rake 'homestead:install:migrations'
       rake 'db:migrate'

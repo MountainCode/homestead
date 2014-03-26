@@ -17,13 +17,7 @@ gemspec
 # Dependencies for the dummy site
 gem 'devise'
 gem 'rails_admin'
-
-# Need to keep paperclip here until rails 4 is added to the main branch
-# gem 'paperclip', git: 'git@github.com:thoughtbot/paperclip.git', branch: 'rails-4'
 gem 'therubyracer'
-gem 'paperclip'
-gem 'ransack', git: 'https://github.com/ernie/ransack.git', branch: 'rails-4'
-gem 'draper'
 
 group :test do
   gem 'cucumber', '1.3.2' # 1.3.2 is required as a fix to https://github.com/cucumber/cucumber-rails/issues/252

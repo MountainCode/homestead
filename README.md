@@ -9,11 +9,13 @@ website layout built on [Bootstrap 3](http://getbootstrap.com)
 
 ## Using
 
-Add to Gemfile then run ```bundle install```.
+Add to Gemfile
 
 ```ruby
 gem 'homestead', git: 'git@github.com:MountainCode/homestead.git'
 ```
+
+Then run ```bundle install```.
 
 You can run ```rails g homestead:install``` which will attempt to automatically
 install Homestead for you.  If you have problems, see the 

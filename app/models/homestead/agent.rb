@@ -6,6 +6,8 @@ module Homestead
 
     has_attached_file :photo, styles: {medium: '300x300>'}, default_url: '/assets/homestead/image_not_found.png'
 
+    validates_attachment_content_type :photo, content_type: ['image/jpg', 'image/jpeg', 'image/png']
+
     validates_presence_of :first_name
     validates_presence_of :last_name
     validates_presence_of :status
