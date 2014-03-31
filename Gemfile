@@ -20,6 +20,9 @@ gem 'rails_admin'
 gem 'therubyracer'
 
 group :test do
+  gem 'paperclip', '~> 4.1.1'
+  gem 'ransack', '~> 1.1.0'
+  gem 'draper', '~> 1.3.0'
   gem 'cucumber', '1.3.2' # 1.3.2 is required as a fix to https://github.com/cucumber/cucumber-rails/issues/252
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
